@@ -1,0 +1,12 @@
+<p>posts works!</p>
+
+<style>
+</style>
+
+<ul>
+    <li *ngFor="let item of posts">
+        <p>{{item.id}}</p>
+        <p>{{item.likeCount}}</p>
+        <img [src] ='item.imagePath' style="width: 600px;height: 400px;"> 
+    </li>
+</ul>
