@@ -1,0 +1,11 @@
+<div class="post">
+    <div>
+        <img src='{{imagePath}}'>
+        <button *ngIf='isLiked' (click)="like()">
+        ❤️{{likeCount}}
+        </button>
+        <button *ngIf='!isLiked' (click)="like()">
+            🤍{{likeCount}}
+        </button>
+    </div>
+</div>
