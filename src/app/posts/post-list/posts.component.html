@@ -1,14 +1,14 @@
-<p>posts works!</p>
 <div class="posts">
-    <ul>
-        <li *ngFor="let item of posts">
+       <div *ngFor="let item of posts">
             <app-post 
+            [userName]='item.userName'
+            [userPhoto]= 'item.userPhoto'
             [id]='item.id'
             [likeCount]='item.likeCount'
             [imagePath]='item.imagePath'
             [isLiked]='item.isLiked'
+            [comments]="item.comments"
             >
             </app-post>
-        </li>
-    </ul>
+        </div>
 </div>

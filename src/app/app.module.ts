@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/post-list/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +16,8 @@ import { PostComponent } from './posts/post/post.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
