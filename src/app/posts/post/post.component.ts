@@ -18,7 +18,7 @@ export class PostComponent {
     @Input() comments: Comment;
 
     public showComments: boolean;
-    public str: string = '';
+    public title: string = '';
     like(): void {
         this.isLiked =  !this.isLiked;
     }
@@ -29,8 +29,10 @@ export class PostComponent {
     }
 
     addComment(id: number): void{
-        console.log("Zalupa");
-        this.comments.text.push("Hui");
+        /* console.log("Zalupa");
+        this.comments.text.push("Hui"); */
+        const comment: string = this.title;
+        this.comments.text.push(comment);
     }
 
 }

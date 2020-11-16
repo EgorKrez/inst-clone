@@ -15,7 +15,12 @@
             <h1 (click)='comment(id)'>💬</h1>
         </div>
         <div [class.comm]="showComments" [class.comm-none]="!showComments">
-            <input type="text" placeholder="Add comment">
+            <input 
+            type="text" 
+            placeholder="Add comment"
+            [(ngModel)]="title"
+            (keydown.enter) = "addComment(id)"
+            >
             <button (click)="addComment(id)">Add</button>
             <ul>
                 <li *ngFor="let item of comments.text">
