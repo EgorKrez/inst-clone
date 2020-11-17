@@ -1,3 +1,4 @@
+import { animate, transition } from '@angular/animations';
 import { Component, Input } from '@angular/core';
 import { Comment } from 'src/app/app.component';
 
@@ -29,10 +30,9 @@ export class PostComponent {
     }
 
     addComment(id: number): void{
-        /* console.log("Zalupa");
-        this.comments.text.push("Hui"); */
         const comment: string = this.title;
         this.comments.text.push(comment);
+        this.title = '';
     }
 
 }

@@ -132,9 +132,13 @@ input {
 }
 .icons-wrapper button:hover {
     border: none;
+    cursor: pointer;
 }
 h1 {
     margin-left: 50px;
+}
+.icons-wrapper h1:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -172,6 +176,7 @@ h1 {
 .comm {
     height: 400px;
     width: 100%;
+    overflow: auto;
 }
 .comm-none {
     display: none;
