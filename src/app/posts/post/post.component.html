@@ -1,8 +1,9 @@
-<div class="post-wrapper">
+<div class="post-wrapper" *ngIf="!LoginComponent">
     <div class="post">
         <div class="user">
             <div class="user-photo"><img src='{{userPhoto}}'></div>
             <h1>{{userName}}</h1>
+            <h1>{{LoginComponent}}</h1>
         </div>
             <div class="img-wrapper"><img src='{{imagePath}}' class="img-post" ></div>
         <div class="icons-wrapper">

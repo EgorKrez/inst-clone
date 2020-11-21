@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Post } from '../../app.component';
+import {LoginComponent} from 'src/app/login/login.component'
 
 @Component({
   selector: 'app-posts',
@@ -9,6 +10,7 @@ import { Post } from '../../app.component';
 export class PostsComponent {
 
   @Input() posts: Post;
+  @Input() LoginComponent: LoginComponent;
 
   constructor() { }
 

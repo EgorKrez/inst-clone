@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+
     email: string = '';
     password: string = '';
-
+    loginUser: boolean = this.logIn;
+    
     public get logIn(): boolean {
       console.log("Key has been returned");
       return (localStorage.getItem('token') !== null);

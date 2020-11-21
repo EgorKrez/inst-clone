@@ -1,18 +1,17 @@
 <div *ngIf="!this.logIn">
     <h3>Login</h3>
     <div class="spacer">
-        <label for="Email">Email</label>
         <input type="text" placeholder="Email" [(ngModel)]="email">
     </div>
     <div class="spacer">
-        <label for="password">Password</label>
         <input type="password" placeholder="password" [(ngModel)]="password" class="form-control" />
 
     </div>
     <div class="spacer">
         <button type="submit" (click)="Login()">Login</button>
-        <button type="submit" (click)="logout()"></button>
+        <button type="submit" (click)="logout()">Logout</button>
     </div>
 </div>
 
-<div style="background-color: red; height: 100px; width: 100px;" *ngIf="this.logIn"></div> 
+<!-- <div style="background-color: red; height: 100px; width: 100px;" *ngIf="this.logIn"></div> 
+ --><button type="submit" (click)="logout()"></button>

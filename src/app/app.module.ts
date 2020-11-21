@@ -28,8 +28,6 @@ import { RouterModule } from '@angular/router';
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: PostComponent }
-       
-     
 ]),
   ],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoginComponent} from 'src/app/login/login.component'
 
 export interface Post {
   userName: string;
@@ -22,6 +23,8 @@ export interface Comment {
 
 export class AppComponent {
   title = 'instagram-clone';
+
+  isLog: object = LoginComponent;
 
   public comms: Comment[] = [
     { text: ['Egor','1488', 'Krez']},

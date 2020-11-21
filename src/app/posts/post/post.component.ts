@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { from } from 'rxjs';
 import { Comment } from 'src/app/app.component';
-
+import {LoginComponent} from 'src/app/login/login.component'
 
 @Component({
     selector: 'app-post',
@@ -18,6 +18,9 @@ export class PostComponent {
     @Input() imagePath: number;
     @Input() isLiked: boolean;
     @Input() comments: Comment;
+    @Input() LoginComponent;
+
+
 
     public showComments: boolean;
     public title: string = '';
