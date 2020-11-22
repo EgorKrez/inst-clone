@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +32,5 @@ export class AuthService {
       return localStorage.setItem('auth_token', this.token);
     }
   }
-  
-  
+
 }

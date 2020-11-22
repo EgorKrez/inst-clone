@@ -1,16 +1,10 @@
-<div *ngIf="!authService.logIn" routerLink='login'>
-    <h3>Login</h3>
-    <div class="spacer">
-        <input type="text" placeholder="Email" [(ngModel)]="email">
-    </div>
-    <div class="spacer">
-        <input type="password" placeholder="password" [(ngModel)]="password" class="form-control" />
-
-    </div>
-    <div class="spacer">
-        <button type="submit" (click)="Login()">Login</button>
-        <button type="submit" (click)="authService.logout()">Logout</button>
+<div class="container" *ngIf="!authService.logIn" routerLink='login'>
+    <div class="field">
+            <div class="img-wrapper">
+            <img src="https://assets.stickpng.com/images/5a4e432a2da5ad73df7efe7a.png" style="height: 100px; width: 300px;"alt="">
+        </div>
+                <input type="text" placeholder="Email" [(ngModel)]="email">
+                <input type="password" placeholder="password" [(ngModel)]="password" class="form-control" />
+                <button type="submit" (click)="Login()">Login</button>
     </div>
 </div>
-
-<button type="submit" (click)="authService.logout()"></button>
