@@ -1,5 +1,6 @@
 <div class="posts">
        <div *ngFor="let item of posts">
+           <h1>hui</h1>
             <app-post 
             [userName]='item.userName'
             [userPhoto]= 'item.userPhoto'
@@ -8,8 +9,10 @@
             [imagePath]='item.imagePath'
             [isLiked]='item.isLiked'
             [comments]="item.comments"
-            [LogIn]="item.LogIn"
             >
             </app-post>
+
         </div>
 </div>
+<h1>ZALUPA</h1>
+<button type="submit" (click)="authService.logout()"></button>

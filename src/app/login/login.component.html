@@ -1,4 +1,4 @@
-<div *ngIf="!this.logIn">
+<div *ngIf="!authService.logIn" routerLink='login'>
     <h3>Login</h3>
     <div class="spacer">
         <input type="text" placeholder="Email" [(ngModel)]="email">
@@ -9,9 +9,8 @@
     </div>
     <div class="spacer">
         <button type="submit" (click)="Login()">Login</button>
-        <button type="submit" (click)="logout()">Logout</button>
+        <button type="submit" (click)="authService.logout()">Logout</button>
     </div>
 </div>
 
-<!-- <div style="background-color: red; height: 100px; width: 100px;" *ngIf="this.logIn"></div> 
- --><button type="submit" (click)="logout()"></button>
+<button type="submit" (click)="authService.logout()"></button>

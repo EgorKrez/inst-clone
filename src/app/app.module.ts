@@ -25,9 +25,9 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'profile', component: PostComponent }
+      { path: 'posts', component: PostsComponent }
 ]),
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-
+import {AuthService} from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,27 +10,15 @@ export class LoginComponent implements OnInit {
 
     email: string = '';
     password: string = '';
-    loginUser: boolean = this.logIn;
-    
-    public get logIn(): boolean {
-      console.log("Key has been returned");
-      return (localStorage.getItem('token') !== null);
-    }
-  constructor() { }
 
-  Login() {
-    if(this.email == "admin" && this.password == "admin") {
-      localStorage.setItem('token', 'value')
-      console.log("You are logging in");
-    }
-    }
-    logout() {
-      localStorage.removeItem('token');
-      console.log("HUi")
-    }
-   
+  constructor(public authService: AuthService) { }
+
    
   ngOnInit(): void {
+  }
+
+  Login(): void {
+    this.authService.login(this.email, this.password);
   }
 
 }
