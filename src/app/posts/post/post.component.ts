@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { from } from 'rxjs';
-import { Comment } from 'src/app/app.component';
+import { Comment } from 'src/app/shared/post.service';
 import {LoginComponent} from 'src/app/login/login.component'
 import {AuthService} from 'src/app/auth.service'
 
@@ -13,6 +13,7 @@ import {AuthService} from 'src/app/auth.service'
 
 export class PostComponent {
     @Input() userName: string;
+    @Input() userPlace: string;
     @Input() userPhoto: string;
     @Input() id: number;
     @Input() likeCount: number;

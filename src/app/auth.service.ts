@@ -33,4 +33,8 @@ export class AuthService {
     }
   }
 
+  addComponent() {
+    this.router.navigate(['add'])
+  }
+
 }

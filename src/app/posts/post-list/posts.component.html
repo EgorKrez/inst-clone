@@ -1,8 +1,15 @@
+<header>
+    <div class="header-content">
+    <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png">
+    <input type="text" placeholder="Search">
+    <button type="submit" (click)="authService.logout()">Log Out</button>    
+</div>
+</header>
 <div class="posts">
-       <div *ngFor="let item of posts">
-           <h1>hui</h1>
+    <div *ngFor="let item of posts">
             <app-post 
             [userName]='item.userName'
+            [userPlace]='item.userPlace'
             [userPhoto]= 'item.userPhoto'
             [id]='item.id'
             [likeCount]='item.likeCount'
@@ -11,8 +18,7 @@
             [comments]="item.comments"
             >
             </app-post>
-
         </div>
 </div>
-<h1>ZALUPA</h1>
-<button type="submit" (click)="authService.logout()"></button>
+<button (click)="addComment()">Add new post</button>
+

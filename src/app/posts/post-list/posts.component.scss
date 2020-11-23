@@ -1,5 +1,55 @@
+body {
+    margin: 0; /* Убираем отступы */
+   }
 button {
-    height: 50px;
-    width: 200px;
-    margin: 0 auto;
+    height: 29px;
+    width: 100px;
+    background-color: rgb(236, 233, 233);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+}
+input {
+    text-align: center;
+}
+header {
+    height: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-content {
+    height: 54px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+img {
+    height: 29px;
+    width: 103px;
+}
+@media (max-width: 973px) {
+    .header-content {
+        width: 482px;
+    }
+}
+
+@media (max-width: 482px) {
+    .header-content {
+        width: 100%;
+    }
+    button {
+        width: 70px;
+    }
+    input {
+        width: 100px;
+    }
+    img {
+        width: 70px;
+    }
 }

@@ -1,26 +1,30 @@
-<div class="post-wrapper"></div>
-<div class="post">
-    <div class="user">
-        <div class="user-photo"><img src='{{userPhoto}}'></div>
-        <h1>{{userName}}</h1>
-    </div>
-    <div class="img-wrapper"><img src='{{imagePath}}' class="img-post"></div>
-    <div class="icons-wrapper">
-        <button *ngIf='isLiked' (click)="like()">
-            💗{{likeCount + 1}}
-        </button>
-        <button *ngIf='!isLiked' (click)="like()">
-            ♡{{likeCount}}
-        </button>
-        <h1 (click)='comment(id)'>💬</h1>
-    </div>
-    <div [class.comm]="showComments" [class.comm-none]="!showComments">
-        <input type="text" placeholder="Add comment" [(ngModel)]="title" (keydown.enter)="addComment(id)">
-        <button (click)="addComment(id)">Add</button>
-        <ul>
-            <li *ngFor="let item of comments.text">
-                <h4>{{item}}</h4>
-            </li>
-        </ul>
+<div class="post-wrapper">
+    <div class="post">
+        <div class="user">
+            <div class="user-photo"><img src='{{userPhoto}}'></div>
+            <div class="text-block">
+                <h3>{{userName}}</h3>
+                <h6>{{userPlace}}</h6>
+            </div>
+        </div>
+        <div class="img-wrapper"><img src='{{imagePath}}' class="img-post"></div>
+        <div class="icons-wrapper">
+            <button *ngIf='isLiked' (click)="like()">
+                💗{{likeCount + 1}}
+            </button>
+            <button *ngIf='!isLiked' (click)="like()">
+                ♡{{likeCount}}
+            </button>
+            <h1 (click)='comment(id)'>💬</h1>
+        </div>
+        <div [class.comm]="showComments" [class.comm-none]="!showComments">
+            <input type="text" placeholder="Add comment" [(ngModel)]="title" (keydown.enter)="addComment(id)">
+            <button (click)="addComment(id)">Add</button>
+            <ul>
+                <li *ngFor="let item of comments.text">
+                    <h4>{{item}}</h4>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
