@@ -53,3 +53,13 @@ img {
         width: 70px;
     }
 }
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.button-wrapper button {
+    height: 50px;
+    width: 40%;
+    background-color: rgb(138, 213, 236);
+}

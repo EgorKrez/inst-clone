@@ -11,6 +11,7 @@ import {PostService} from 'src/app/shared/post.service'
 export class OpenPostComponent implements OnInit {
 
   title: string = '';
+  showComments: boolean = false;
 
   constructor(public authService: AuthService, public postService: PostService) { }
 
@@ -47,6 +48,10 @@ returnToPosts() {
 editPost(id: number) {
   console.log(id)
   this.authService.editPost(id);
+}
+
+comment(): void {
+  this.showComments = !this.showComments;
 }
 
 }
