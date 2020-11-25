@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-/* import { Post } from '../../app.component'; */
 import {LoginComponent} from 'src/app/login/login.component'
 import {AuthService} from 'src/app/auth.service'
 import {PostService} from 'src/app/shared/post.service'
@@ -14,8 +13,6 @@ import { from } from 'rxjs';
 })
 export class PostsComponent {
 
-
-  items =["Tom", "Bob", "Sam", "Bill"];
 
   @Input() LoginComponent: LoginComponent;
 

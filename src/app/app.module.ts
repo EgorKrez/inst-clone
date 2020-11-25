@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AddComponent } from './posts/add/add.component';
+import { OpenPostComponent } from './posts/open-post/open-post.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { AddComponent } from './posts/add/add.component';
     PostComponent,
     LoginComponent,
     AddComponent,
+    OpenPostComponent,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { AddComponent } from './posts/add/add.component';
       { path: 'login', component: LoginComponent },
       { path: 'posts', component: PostsComponent },
       {path: 'add', component: AddComponent},
+      {path: 'open', component: OpenPostComponent},
+      {path: 'edit', component: EditPostComponent},
       {path: '**', component: LoginComponent}
 ]),
   ],

@@ -20,12 +20,14 @@ export class PostComponent {
     @Input() imagePath: number;
     @Input() isLiked: boolean;
     @Input() comments: Comment;
-    @Input() authService: AuthService;
+
+    constructor(public authService: AuthService) { }
     
     public getLogin() {
         console.log(this.authService.logIn);
         return this.authService.logIn;
     } 
+
 
     public showComments: boolean;
     public title: string = '';
@@ -44,4 +46,8 @@ export class PostComponent {
         this.title = '';
     }
 
+    openPost(id: number) {
+        console.log(id)
+        this.authService.openPost(id)
+    }
 }

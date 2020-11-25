@@ -12,6 +12,9 @@ export class AuthService {
   private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.LPioAgzhHkoy8x-Kph3-d3hh2Wm4ZoqgCvm-eM7gXjo';
   private email: string;
   private password: string;
+
+  public checkId: number;
+
   public get logIn(): boolean {
     return (localStorage.getItem('auth_token') !== null);
   }
@@ -37,4 +40,19 @@ export class AuthService {
     this.router.navigate(['add'])
   }
 
+  returnToPosts() {
+    this.router.navigate(['posts'])
+  }
+
+  editPost(id: number) {
+    this.router.navigate(['edit'])
+    this.checkId = id;
+    console.log("checkId = "+this.checkId)
+  }
+
+  openPost(id: number) {
+    this.router.navigate(['open'])
+    this.checkId = id;
+    console.log("checkId = "+this.checkId)
+  }
 }

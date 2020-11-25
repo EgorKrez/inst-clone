@@ -28,7 +28,7 @@ export class PostService{
   public imagePath: string; 
   public isLiked: boolean; 
   public comments: any;
-    constructor(userName: string, userPlace: string, userPhoto: string, id: number, likeCount: number, imagePath: string, isLiked: boolean, comments: any){
+    /* constructor(userName: string, userPlace: string, userPhoto: string, id: number, likeCount: number, imagePath: string, isLiked: boolean, comments: any){
       this.userName = userName;
       this.userPlace = userPlace;
       this.userPhoto = userPhoto;
@@ -37,7 +37,7 @@ export class PostService{
       this.imagePath = imagePath;
       this.isLiked = isLiked;
       this.comments = comments;  
-    }
+    } */
   public comms: Comment[] = [
     { text: ['Egor','1488', 'Krez']},
     { text: ['Krez', 'Egor', '322']},

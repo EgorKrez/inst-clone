@@ -10,7 +10,6 @@ import {PostService} from 'src/app/shared/post.service'
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-  @Input() authService: AuthService;
 
   userName: string = '';
   userPlace: string = '';
@@ -18,19 +17,34 @@ export class AddComponent implements OnInit {
   img: string = '';
 
   posts: Post [] = this.postService.posts;
-  constructor(public postService: PostService) { }
+  constructor(public authService: AuthService, public postService: PostService) { }
 
+
+  public newPost: Post = 
+    { userName: '',
+      userPlace: '',
+      userPhoto: 'https://i2.wp.com/immap.org/wp-content/uploads/2018/06/uknown.jpg?ssl=1',
+      id: this.posts.length + 1,
+      likeCount: 0,
+      imagePath: 'https://i2.wp.com/immap.org/wp-content/uploads/2018/06/uknown.jpg?ssl=1',
+      isLiked: false, 
+      comments: {text: ['']
+    }
+    }; 
   
-  ngOnInit(): void {
+    ngOnInit(): void {
   }
 
-  generatePost(/* userName: string, userPlace: string, userPhoto: string, img: string = '' */) {
-    console.log(this.userName)
-    console.log(this.userPlace)
-    console.log(this.userPhoto)
-    console.log(this.img)
-    this.posts.push(this.userName, this.userPlace, this.userPhoto, this.posts.length + 1, 0, this.img, false, [] )
-    //this.posts.push(this.userName, this.userPlace, this.userPhoto, this.posts.length + 1, 0, this.img, false, [] )
+  generatePost() {
+    this.newPost.userName = this.userName
+    this.newPost.userPlace = this.userPlace
+    this.newPost.userPhoto = this.userPhoto
+    this.newPost.imagePath = this.img
+    this.posts.push(this.newPost)
+  }
+
+  returnToPosts() {
+    this.authService.returnToPosts();
   }
 
 }
