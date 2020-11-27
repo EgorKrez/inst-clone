@@ -55,4 +55,9 @@ export class AuthService {
     this.checkId = id;
     console.log("checkId = "+this.checkId)
   }
+
+  openAccount(id: number) {
+    this.router.navigate(['acc'])
+    this.checkId = id;
+  }
 }

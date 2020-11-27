@@ -15,6 +15,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard} from './auth-guard'
 import { from } from 'rxjs';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { from } from 'rxjs';
     OpenPostComponent,
     EditPostComponent,
     NotFoundComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +38,11 @@ import { from } from 'rxjs';
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      //{ path: 'posts', component: PostsComponent },
-      { path: 'add', component: AddComponent},
-      { path: 'open', component: OpenPostComponent},
-      { path: 'edit', component: EditPostComponent},
+      { path: 'posts', component: PostsComponent, canActivate: [AuthGuard] },
+      { path: 'add', component: AddComponent, canActivate: [AuthGuard] },
+      { path: 'open', component: OpenPostComponent, canActivate: [AuthGuard] },
+      { path: 'edit', component: EditPostComponent, canActivate: [AuthGuard] },
+      { path: 'acc', component: AccountComponent, canActivate: [AuthGuard] },
       {
         canActivate: [AuthGuard],
         path: 'posts',

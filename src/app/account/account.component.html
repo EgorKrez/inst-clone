@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content">
+    <header>
+        <div class="header-content">
+            <img src="{{newPost.userPhoto}}">
+            <h1>{{newPost.userName}}</h1>
+        </div>
+        
+    </header>
+    <main>
+       <div *ngFor="let item of posts">
+           <div *ngIf="item.userName == newPost.userName">
+               <div class="user-block" style="background-image: url('{{item.imagePath}}');" (click)="openPost(item.id)">
+                    <a>&#10084;{{item.likeCount}}</a>
+                   </div>
+           </div>
+       </div> 
+    </main>
+</div>
+</div>

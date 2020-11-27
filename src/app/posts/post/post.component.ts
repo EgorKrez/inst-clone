@@ -50,4 +50,8 @@ export class PostComponent {
         console.log(id)
         this.authService.openPost(id)
     }
+
+    openAccount(id: number) {
+        this.authService.openAccount(id)
+    }
 }

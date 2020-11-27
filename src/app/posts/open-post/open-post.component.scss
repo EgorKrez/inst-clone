@@ -132,9 +132,15 @@ img {
     height: 30px;
     width: 25%;
 }
+.img-wrapper {
+    height: 600px;
+}
 @media (max-width: 950px) {
     .post-photo {
         width: 50%;
+        height: 500px;
+    }
+    .img-wrapper {
         height: 500px;
     }
     .post {
@@ -160,6 +166,9 @@ img {
         width: 50%;
         height: 420px;
     }
+    .img-wrapper {
+        height: 420px;
+    }
     .post {
         height: 420px;
     }
@@ -172,6 +181,9 @@ img {
     }
     .post-photo {
         width: 50%;
+        height: 350px;
+    }
+    .img-wrapper {
         height: 350px;
     }
     .post {
@@ -201,6 +213,9 @@ img {
 }
     .post-photo {
         width: 50%;
+        height: 300px;
+    }
+    .img-wrapper {
         height: 300px;
     }
     .post {
