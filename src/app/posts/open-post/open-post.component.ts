@@ -54,5 +54,8 @@ comment(): void {
   this.showComments = !this.showComments;
 }
 
+openAccount(id: number) {
+  this.authService.openAccount(id)
+}
 
 }
