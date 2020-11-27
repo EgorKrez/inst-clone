@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="post">
+        <div class="post-photo">
+            <div class="user-name">
+                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
+                <div class="text-block">
+                    <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>
+                    <h6>{{this.postService.posts[this.Id - 1].userPlace}}</h6>
+                </div>
+            </div>
+            <div class="img-wrapper"><img src="{{this.postService.posts[this.Id - 1].imagePath}}"></div>
+        </div>
+        <div class="post-comms">
+            <div class="user-block">
+                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
+                <div class="text-block">
+                    <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>
+                    <h6>{{this.postService.posts[this.Id - 1].userPlace}}</h6>
+                </div>
+            </div>
+            <div class="comms-field">
+                <ul>
+                    <li *ngFor="let item of this.postService.posts[this.Id - 1].comments.text">
+                        <h4>{{item}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="likes-field">
+                <button *ngIf='this.postService.posts[this.Id - 1].isLiked' (click)="like()">
+                    💗{{this.postService.posts[this.Id - 1].likeCount + 1}}
+                </button>
+                <button *ngIf='!this.postService.posts[this.Id - 1].isLiked' (click)="like()">
+                    ♡{{this.postService.posts[this.Id - 1].likeCount}}
+                </button>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Add comment" [(ngModel)]="title" (keydown.enter)="addComment()">
+                <button (click)="addComment()">Add</button>
+            </div>
+            <div class="buttons">
+                <button (click)="editPost(this.postService.posts[this.Id - 1].id)">Edit</button>
+                <button (click)="deletePost()">Delete</button>
+                <button (click)="returnToPosts()">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

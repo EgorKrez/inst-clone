@@ -1,14 +1,24 @@
-<p>posts works!</p>
+<header>
+    <div class="header-content">
+    <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png">
+    <input type="text" placeholder="Search">
+    <button type="submit" (click)="authService.logout()">Log Out</button>    
+</div>
+</header>
 <div class="posts">
-    <ul>
-        <li *ngFor="let item of posts">
+    <div *ngFor="let item of posts">
             <app-post 
+            [userName]='item.userName'
+            [userPlace]='item.userPlace'
+            [userPhoto]= 'item.userPhoto'
             [id]='item.id'
             [likeCount]='item.likeCount'
             [imagePath]='item.imagePath'
             [isLiked]='item.isLiked'
+            [comments]="item.comments"
             >
             </app-post>
-        </li>
-    </ul>
+        </div>
 </div>
+<div class="button-wrapper"><button (click)="addComment()">Add new post</button></div>
+

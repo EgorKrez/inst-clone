@@ -1,0 +1,10 @@
+<div class="container" *ngIf="!authService.logIn" routerLink='login'>
+    <div class="field">
+            <div class="img-wrapper">
+            <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png" style="height: 100px; width: 300px;"alt="">
+        </div>
+                <input type="text" placeholder="Email" [(ngModel)]="email">
+                <input type="password" placeholder="password" [(ngModel)]="password" class="form-control" />
+                <button type="submit" (click)="Login()">Login</button>
+    </div>
+</div>
