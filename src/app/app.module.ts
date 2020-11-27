@@ -12,7 +12,9 @@ import { RouterModule } from '@angular/router';
 import { AddComponent } from './posts/add/add.component';
 import { OpenPostComponent } from './posts/open-post/open-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
-
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGuard} from './auth-guard'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     AddComponent,
     OpenPostComponent,
     EditPostComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,11 +36,16 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'posts', component: PostsComponent },
-      {path: 'add', component: AddComponent},
-      {path: 'open', component: OpenPostComponent},
-      {path: 'edit', component: EditPostComponent},
-      {path: '**', component: LoginComponent}
+      //{ path: 'posts', component: PostsComponent },
+      { path: 'add', component: AddComponent},
+      { path: 'open', component: OpenPostComponent},
+      { path: 'edit', component: EditPostComponent},
+      {
+        canActivate: [AuthGuard],
+        path: 'posts',
+        component: PostsComponent
+      },
+      //{ path: '**', component: NotFoundComponent}
 ]),
   ],
   providers: [],
