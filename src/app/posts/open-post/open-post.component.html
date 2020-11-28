@@ -1,17 +1,17 @@
 <div class="container">
     <div class="post">
-        <div class="post-photo">
+        <div class="post-photo" (dblclick)="like()">
             <div class="user-name">
-                <div class="user-photo" (click)="openAccount(this.postService.posts[this.Id])"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
+                <div class="user-photo" ><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
                 <div class="text-block">
                     <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>
                     <h6>{{this.postService.posts[this.Id - 1].userPlace}}</h6>
                 </div>
             </div>
-            <div class="img-wrapper"><img src="{{this.postService.posts[this.Id - 1].imagePath}}"></div>
+            <div class="img-wrapper" ><img src="{{this.postService.posts[this.Id - 1].imagePath}}"></div>
         </div>
         <div class="post-comms">
-            <div class="user-block">
+            <div class="user-block" (click)="openAccount(this.Id)">
                 <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
                 <div class="text-block">
                     <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>

@@ -57,5 +57,8 @@ comment(): void {
 openAccount(id: number) {
   this.authService.openAccount(id)
 }
+showw() {
+alert("hui")
+}
 
 }

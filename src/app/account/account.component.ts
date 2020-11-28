@@ -27,4 +27,8 @@ export class AccountComponent implements OnInit {
     this.authService.openPost(id)
 }
 
+returnToPosts() {
+  this.authService.returnToPosts();
+}
+
 }
