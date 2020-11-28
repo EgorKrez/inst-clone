@@ -2,12 +2,22 @@
 Instagram-clone was written in Angular, SCSS, TypeScript, HTML5 with using JWT. I've tried to create instagram copy with main instagram featues.
 
 # How to use
-Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-When starting the application we look login field, we must enter "admin" in both fields and application redirects us to posts. We can add new posts, edit and delete some posts 
-if we want to do that. This isn't release version and application will be improved.
+## Start server
+Run following command: 
+`ng serve` 
+## Navigate to http://localhost:4200/.
+The app will automatically reload if you change any of the source files.
+## Enter `admin` for login and password 
+## Usage
+After login page application redirects you to the posts page. You can add, edit and delete posts. 
 
 # Goals
-[] - Improve design of this application.
-[] - Add infinity scroll to optimize my application.
-
+This isn't release version and application will be improved.
+## Future improvments
+- [ ] - Design improvments.
+- [ ] - Infinity scroll.
+- [ ] - Flexible search.
+- [ ] - Unit tests.
+- [ ] - Containerisation.
+- [ ] - Mocking HTTP requests.
 
