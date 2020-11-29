@@ -1,8 +1,28 @@
+
+
 <div class="container">
-<div class="input-block"><h1>userName </h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userName}}" [(ngModel)]="userName"></div>
-<div class="input-block"><h1>userPlace</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPlace}}" [(ngModel)]="userPlace"></div>
-<div class="input-block"><h1>userPhoto</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPhoto}}" [(ngModel)]="userPhoto"></div>
-<div class="input-block"><h1>imagePath</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].imagePath}}" [(ngModel)]="img"></div>
-<div class="input-block"><button (click)="generatePost()">Add post</button></div>
-<div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+    <div class="field">
+        <a>Username</a>
+        <div class="input-block">
+            <input type="text" placeholder="Username"
+                [(ngModel)]="userName">
+        </div>
+        <a>Place</a>
+        <div class="input-block">
+            <input type="text" placeholder="Place"
+                [(ngModel)]="userPlace">
+        </div>
+        <a>User Photo</a>
+        <div class="input-block">
+            <input type="text" placeholder="User Photo"
+                [(ngModel)]="userPhoto">
+        </div>
+        <a>Photo</a>
+        <div class="input-block">
+            <input type="text" placeholder="Photo"
+                [(ngModel)]="img">
+        </div>
+        <div class="input-block"><button (click)="generatePost()">Edit post</button></div>
+        <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+    </div>
 </div>

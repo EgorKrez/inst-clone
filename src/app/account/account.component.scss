@@ -3,7 +3,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 .content {
     width: 70%;
@@ -67,4 +66,18 @@ button {
     margin-left: 50px;
     height: 30px;
     width: 100px;
+}
+
+.header {
+    height: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.header img {
+    height: 29px;
+    width: 103px;
 }

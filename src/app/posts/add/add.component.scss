@@ -1,4 +1,4 @@
-.container {
+/* .container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -23,4 +23,48 @@ button {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
+} */
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input {
+    height: 30px;
+    width: 90%;
+    margin: 0px 20px 20px 20px;
+    border-radius: 1px;
+    text-align: center;
+}
+button {
+    width: 90%;
+    margin: 20px;
+    height: 30px;
+}
+.input-block {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.field {
+    margin-top: 30px;
+    width: 400px;
+    height: 550px;
+    border-radius: 10px;
+    border: 1px solid silver;
+    padding-top: 30px;
+}
+a {
+    margin-left: 20px;
+}
+@media (max-width: 400px) {
+    .field {
+        width: 100%;
+    }
 }

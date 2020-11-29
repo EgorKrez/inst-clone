@@ -130,7 +130,7 @@ img {
 }
 .buttons button {
     height: 30px;
-    width: 25%;
+    width: 20%;
 }
 .img-wrapper {
     height: 600px;
@@ -290,4 +290,30 @@ img {
     .img-wrapper {
         height: 280px;
     }
+}
+.header {
+    height: 54px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.header img {
+    height: 29px;
+    width: 103px;
+}
+.header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.header button {
+    height: 29px;
+    width: 100px;
+    background-color: rgb(236, 233, 233);
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }

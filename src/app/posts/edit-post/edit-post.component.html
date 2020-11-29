@@ -1,15 +1,32 @@
-<div class="container">
-    <div class="input-block"><h1>userName </h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userName}}" [(ngModel)]="userName"></div>
-    <div class="input-block"><h1>userPlace</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPlace}}" [(ngModel)]="userPlace"></div>
-    <div class="input-block"><h1>userPhoto</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPhoto}}" [(ngModel)]="userPhoto"></div>
-    <div class="input-block"><h1>imagePath</h1><input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].imagePath}}" [(ngModel)]="img"></div>
-    <div class="input-block"><button (click)="editPost()">Edit post</button></div>
-    <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
-
-    
-    
-    
-    
-    
+<div class="header-wrapper">
+    <div class="header">
+        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png">
+        <button type="submit" (click)="authService.logout()">Log Out</button>
     </div>
-    
+</div>
+<div class="container">
+    <div class="field">
+        <a>Username</a>
+        <div class="input-block">
+            <input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userName}}"
+                [(ngModel)]="userName">
+        </div>
+        <a>Place</a>
+        <div class="input-block">
+            <input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPlace}}"
+                [(ngModel)]="userPlace">
+        </div>
+        <a>User Photo</a>
+        <div class="input-block">
+            <input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].userPhoto}}"
+                [(ngModel)]="userPhoto">
+        </div>
+        <a>Photo</a>
+        <div class="input-block">
+            <input type="text" placeholder="{{this.postService.posts[this.authService.checkId - 1].imagePath}}"
+                [(ngModel)]="img">
+        </div>
+        <div class="input-block"><button (click)="editPost()">Edit post</button></div>
+        <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+    </div>
+</div>

@@ -48,7 +48,7 @@ import { AccountComponent } from './account/account.component';
         path: 'posts',
         component: PostsComponent
       },
-      //{ path: '**', component: NotFoundComponent}
+      { path: '**', component: NotFoundComponent}
 ]),
   ],
   providers: [],
