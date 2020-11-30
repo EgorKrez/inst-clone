@@ -8,9 +8,9 @@
 <div class="posts">
     <div *ngFor="let item of posts">
             <app-post 
-            [userName]='item.userName'
+            [userName]='item.user.userName'
             [userPlace]='item.userPlace'
-            [userPhoto]= 'item.userPhoto'
+            [userPhoto]= 'item.user.userPhoto'
             [id]='item.id'
             [likeCount]='item.likeCount'
             [imagePath]='item.imagePath'
@@ -21,4 +21,7 @@
         </div>
 </div>
 <div class="button-wrapper"><button (click)="addComment()">Add new post</button></div>
+<footer>
+    <h3>© EgorKrez.github.io 2020 | Developed by ME</h3>
+</footer>
 

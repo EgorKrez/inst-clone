@@ -15,10 +15,6 @@ export class OpenPostComponent implements OnInit {
 
   constructor(public authService: AuthService, public postService: PostService) { }
 
-  show() {
-    console.log(this.postService.posts[this.Id - 1].userName)
-  }
-
   public Id: number = this.authService.checkId;
 
   ngOnInit(): void {

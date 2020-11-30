@@ -21,24 +21,24 @@ export class AddComponent implements OnInit {
 
 
   public newPost: Post = 
-    { userName: '',
+    { user: {userName: 'No name', 
+      //userPhoto: 'https://img-17.ccm2.net/D6U8BTHt725j955FrEJc2ELUq9o=/2048x/317e4774e98c48e8a7c26cbcd5651a26/ccm-faq/Incognito_Chrome_0.jpg'},
+      userPhoto: 'https://img-17.ccm2.net/D6U8BTHt725j955FrEJc2ELUq9o=/2048x/317e4774e98c48e8a7c26cbcd5651a26/ccm-faq/Incognito_Chrome_0.jpg'},
       userPlace: '',
-      userPhoto: 'https://i2.wp.com/immap.org/wp-content/uploads/2018/06/uknown.jpg?ssl=1',
       id: this.posts.length + 1,
       likeCount: 0,
       imagePath: 'https://i2.wp.com/immap.org/wp-content/uploads/2018/06/uknown.jpg?ssl=1',
       isLiked: false, 
-      comments: {text: ['']
-    }
+      comments: {text: ['']}
     }; 
   
     ngOnInit(): void {
   }
 
   generatePost() {
-    this.newPost.userName = this.userName
+    this.newPost.user.userName = this.userName
     this.newPost.userPlace = this.userPlace
-    this.newPost.userPhoto = this.userPhoto
+    this.newPost.user.userPhoto = this.userPhoto
     this.newPost.imagePath = this.img
     this.posts.push(this.newPost)
   }

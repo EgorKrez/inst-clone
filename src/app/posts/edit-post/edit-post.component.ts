@@ -25,9 +25,9 @@ export class EditPostComponent implements OnInit {
   }
 
   editPost() {
-    if(this.userName != '') this.newPost.userName = this.userName
+    if(this.userName != '') this.newPost.user.userName = this.userName
     if(this.userPlace != '') this.newPost.userPlace = this.userPlace
-    if(this.userPhoto != '') this.newPost.userPhoto = this.userPhoto
+    if(this.userPhoto != '') this.newPost.user.userPhoto = this.userPhoto
     if(this.img != '') this.newPost.imagePath = this.img
     this.posts[this.authService.checkId - 1] = this.newPost;
   }
