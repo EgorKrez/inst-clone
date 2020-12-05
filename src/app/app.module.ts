@@ -16,6 +16,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard} from './auth-guard'
 import { from } from 'rxjs';
 import { AccountComponent } from './account/account.component';
+import { ScrollingModule} from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
