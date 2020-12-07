@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from '@angular/core';
+import { ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/post-list/posts.component';
 import { PostComponent } from './posts/post/post.component';
@@ -13,11 +12,10 @@ import { AddComponent } from './posts/add/add.component';
 import { OpenPostComponent } from './posts/open-post/open-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthGuard} from './auth-guard'
+import { AuthGuard } from './auth-guard'
 import { from } from 'rxjs';
 import { AccountComponent } from './account/account.component';
-import { ScrollingModule} from '@angular/cdk/scrolling';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -50,8 +48,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
         path: 'posts',
         component: PostsComponent
       },
-      { path: '**', component: NotFoundComponent}
-]),
+      { path: '**', component: NotFoundComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

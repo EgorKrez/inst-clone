@@ -1,34 +1,45 @@
-
 <div class="header-wrapper">
     <div class="header">
-        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png" (click)="returnToPosts()">
+        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png"
+            (click)="returnToPosts()">
         <button type="submit" (click)="authService.logout()">Log Out</button>
     </div>
 </div>
 <div class="container">
     <div class="field">
-        <a>Username</a>
-        <div class="input-block">
-            <input type="text" placeholder="Username"
-                [(ngModel)]="userName">
-        </div>
-        <a>Place</a>
-        <div class="input-block">
-            <input type="text" placeholder="Place"
-                [(ngModel)]="userPlace">
-        </div>
-        <a>User Photo</a>
-        <div class="input-block">
-            <input type="text" placeholder="User Photo"
-                [(ngModel)]="userPhoto">
-        </div>
-        <a>Photo</a>
-        <div class="input-block">
-            <input type="text" placeholder="Photo"
-                [(ngModel)]="img">
-        </div>
-        <div class="input-block"><button (click)="generatePost()">Edit post</button></div>
-        <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+        <!-- <form [formGroup]="myForm" novalidate (ngSubmit)="submit()"> -->
+            <a>Username</a>
+            <div class="input-block">
+                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Username" 
+                [(ngModel)]="userName"
+                (change)="onTitleChange()"
+                >
+                <!-- <div [hidden]="userName.valid || userName.untouched" class="alert alert-danger"></div> -->
+            </div>
+            <a>Place</a>
+            <div class="input-block">
+                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Place" 
+                [(ngModel)]="userPlace"
+                >
+                <!-- <div [hidden]="userPlace.valid || userPlace.untouched" class="alert alert-danger"></div> -->
+            </div>
+            <a>User Photo</a>
+            <div class="input-block">
+                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="User Photo" 
+                [(ngModel)]="userPhoto"
+                >
+                <!-- <div [hidden]="userPhoto.valid || userPhoto.untouched" class="alert alert-danger"></div> -->
+            </div>
+            <a>Photo</a>
+            <div class="input-block">
+                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Photo" 
+                [(ngModel)]="img"
+                >
+                <!-- <div [hidden]="img.valid || img.untouched" class="alert alert-danger"></div> -->
+            </div>
+            <div class="input-block"><button (click)="generatePost()">Add post</button></div>
+            <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+        <!-- </form> -->
     </div>
 </div>
 <footer>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from 'src/app/auth.service'
-import {Post} from 'src/app/shared/post.service'
-import {PostService} from 'src/app/shared/post.service'
+import { AuthService } from 'src/app/auth.service'
+import { Post } from 'src/app/shared/post.service'
+import { PostService } from 'src/app/shared/post.service'
 
 @Component({
   selector: 'app-edit-post',
@@ -9,12 +9,10 @@ import {PostService} from 'src/app/shared/post.service'
   styleUrls: ['./edit-post.component.scss']
 })
 export class EditPostComponent implements OnInit {
-  userName: string = '';
   userPlace: string = '';
-  userPhoto: string = '';
   img: string = '';
 
-  posts: Post [] = this.postService.posts;
+  posts: Post[] = this.postService.posts;
 
   constructor(public authService: AuthService, public postService: PostService) { }
 
@@ -25,10 +23,8 @@ export class EditPostComponent implements OnInit {
   }
 
   editPost() {
-    if(this.userName != '') this.newPost.user.userName = this.userName
-    if(this.userPlace != '') this.newPost.userPlace = this.userPlace
-    if(this.userPhoto != '') this.newPost.user.userPhoto = this.userPhoto
-    if(this.img != '') this.newPost.imagePath = this.img
+    if (this.userPlace != '') this.newPost.userPlace = this.userPlace
+    if (this.img != '') this.newPost.imagePath = this.img
     this.posts[this.authService.checkId - 1] = this.newPost;
   }
 

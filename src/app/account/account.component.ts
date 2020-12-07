@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from 'src/app/auth.service'
-import {Post} from 'src/app/shared/post.service'
-import {PostService} from 'src/app/shared/post.service'
+import { AuthService } from 'src/app/auth.service'
+import { Post } from 'src/app/shared/post.service'
+import { PostService } from 'src/app/shared/post.service'
 
 @Component({
   selector: 'app-account',
@@ -25,10 +25,10 @@ export class AccountComponent implements OnInit {
   openPost(id: number) {
     console.log(id)
     this.authService.openPost(id)
-}
+  }
 
-returnToPosts() {
-  this.authService.returnToPosts();
-}
+  returnToPosts() {
+    this.authService.returnToPosts();
+  }
 
 }

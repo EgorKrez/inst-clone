@@ -5,8 +5,9 @@
         <button type="submit" (click)="authService.logout()">Log Out</button>
     </div>
 </header>
+
 <div class="posts">
-    <div *ngFor="let item of posts">
+    <div *ngFor="let item of a">
             <app-post 
             [userName]='item.user.userName'
             [userPlace]='item.userPlace'
@@ -20,6 +21,7 @@
             </app-post>
         </div>
 </div>
+<div class="button-wrapper"><button (click)="pagination()">Show more posts</button></div>
 <div class="button-wrapper"><button (click)="addComment()">Add new post</button></div>
 <footer>
     <h3>© EgorKrez.github.io 2020 | Developed by ME</h3>
