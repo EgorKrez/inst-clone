@@ -1,10 +1,11 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/post-list/posts.component';
 import { PostComponent } from './posts/post/post.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
@@ -15,7 +16,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './auth-guard'
 import { from } from 'rxjs';
 import { AccountComponent } from './account/account.component';
-
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { AccountComponent } from './account/account.component';
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
     RouterModule.forRoot([

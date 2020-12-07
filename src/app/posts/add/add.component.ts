@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { from } from 'rxjs';
 import { AuthService } from 'src/app/auth.service'
 import { Post } from 'src/app/shared/post.service'
 import { PostService } from 'src/app/shared/post.service'
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -10,6 +12,8 @@ import { PostService } from 'src/app/shared/post.service'
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
+
+  public addForm: FormGroup;
 
   userName: string = '';
   userPlace: string = '';
@@ -36,6 +40,7 @@ export class AddComponent implements OnInit {
     };
 
   ngOnInit(): void {
+    this.initForm()
   }
 
   generatePost() {
@@ -50,7 +55,16 @@ export class AddComponent implements OnInit {
     this.authService.returnToPosts();
   }
 
-  onTitleChange() {
-    if(this.userName = null) this.userName = "NoName"
+  public initForm() {
+    this.addForm = new FormGroup({
+      userName: new FormControl(''),
+      userPlace: new FormControl(''),
+      userPhoto: new FormControl(''),
+      img: new FormControl(''),
+    })
   }
+
+  submit(form: NgForm){
+    console.log(form);
+}
 }

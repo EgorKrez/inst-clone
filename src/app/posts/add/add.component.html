@@ -7,39 +7,34 @@
 </div>
 <div class="container">
     <div class="field">
-        <!-- <form [formGroup]="myForm" novalidate (ngSubmit)="submit()"> -->
+        <form class="ng-pristine ng-untouched ng-valid" novalidate #myForm="ngForm" [formGroup]="addForm" (ngSubmit)="generatePost()">
             <a>Username</a>
-            <div class="input-block">
-                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Username" 
-                [(ngModel)]="userName"
-                (change)="onTitleChange()"
+            <div class="form-group">
+                <input class="form-control" formControlName="userName" type="text" placeholder="Username" [(ngModel)]="userName"
+                required minlength="2" required
                 >
-                <!-- <div [hidden]="userName.valid || userName.untouched" class="alert alert-danger"></div> -->
             </div>
             <a>Place</a>
-            <div class="input-block">
-                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Place" 
-                [(ngModel)]="userPlace"
+            <div class="form-group">
+                <input class="form-control" formControlName="userPlace" type="text" placeholder="Place" [(ngModel)]="userPlace" 
+                required minlength="5" required
                 >
-                <!-- <div [hidden]="userPlace.valid || userPlace.untouched" class="alert alert-danger"></div> -->
             </div>
             <a>User Photo</a>
-            <div class="input-block">
-                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="User Photo" 
-                [(ngModel)]="userPhoto"
+            <div class="form-group">
+                <input class="form-control" formControlName="userPhoto" type="text" placeholder="User Photo" [(ngModel)]="userPhoto"
+                required minlength="20" required
                 >
-                <!-- <div [hidden]="userPhoto.valid || userPhoto.untouched" class="alert alert-danger"></div> -->
             </div>
             <a>Photo</a>
-            <div class="input-block">
-                <input class="form-control ng-untouched ng-pristine ng-valid" type="text" placeholder="Photo" 
-                [(ngModel)]="img"
+            <div class="form-group">
+                <input class="form-control" formControlName="img" type="text" placeholder="Photo" [(ngModel)]="img"
+                required minlength="20" required
                 >
-                <!-- <div [hidden]="img.valid || img.untouched" class="alert alert-danger"></div> -->
             </div>
-            <div class="input-block"><button (click)="generatePost()">Add post</button></div>
-            <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
-        <!-- </form> -->
+            <div class="input-block"><button type="submit" [disabled]="!myForm.valid" click="submit(myForm)">Add post</button></div>
+         </form> 
+         <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
     </div>
 </div>
 <footer>

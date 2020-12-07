@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service'
 import { Post } from 'src/app/shared/post.service'
 import { PostService } from 'src/app/shared/post.service'
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-post',
@@ -9,6 +11,9 @@ import { PostService } from 'src/app/shared/post.service'
   styleUrls: ['./edit-post.component.scss']
 })
 export class EditPostComponent implements OnInit {
+
+  public addForm: FormGroup;
+
   userPlace: string = '';
   img: string = '';
 
@@ -20,6 +25,7 @@ export class EditPostComponent implements OnInit {
   public newPost: Post = this.postService.posts[this.authService.checkId - 1]
 
   ngOnInit(): void {
+    this.initForm()
   }
 
   editPost() {
@@ -35,4 +41,15 @@ export class EditPostComponent implements OnInit {
   returnToPosts() {
     this.authService.returnToPosts();
   }
+
+  public initForm() {
+    this.addForm = new FormGroup({
+      userPlace: new FormControl(this.newPost.userPlace),
+      img: new FormControl(this.newPost.imagePath),
+    })
+  }
+
+  submit(form: NgForm){
+    console.log(form);
+}
 }
