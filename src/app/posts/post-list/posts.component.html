@@ -7,7 +7,7 @@
 </header>
 
 <div class="posts">
-    <div *ngFor="let item of a">
+    <!-- <div *ngFor="let item of a | json">
             <app-post 
             [userName]='item.user.userName'
             [userPlace]='item.userPlace'
@@ -19,8 +19,13 @@
             [comments]="item.comments"
             >
             </app-post>
-        </div>
+        </div> -->
 </div>
+<h1>{{a}}</h1>
+<div *ngFor="let item of a">
+    <h1>hui</h1>
+</div>
+
 <div class="button-wrapper"><button (click)="pagination()">Show more posts</button></div>
 <div class="button-wrapper"><button (click)="addComment()">Add new post</button></div>
 <footer>

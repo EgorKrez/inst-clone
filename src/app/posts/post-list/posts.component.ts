@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ChangeDetectorRef } from '@angular/core';
 import {LoginComponent} from 'src/app/login/login.component'
 import {AuthService} from 'src/app/auth.service'
 import {PostService} from 'src/app/shared/post.service'
@@ -34,7 +34,7 @@ export class PostsComponent {
   pagination() {
     this.paginationStep +=3;  
     this.a = this.postService.posts.slice(0, this.paginationStep + numbOfPosts);
-    
+    console.log(this.a)
   }
   }
 
