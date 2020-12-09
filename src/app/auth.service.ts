@@ -47,12 +47,17 @@ export class AuthService {
   editPost(id: number) {
     this.router.navigate(['edit'])
     this.checkId = id;
-    console.log("checkId = "+this.checkId)
+    console.log("checkId = " + this.checkId)
   }
 
   openPost(id: number) {
     this.router.navigate(['open'])
     this.checkId = id;
-    console.log("checkId = "+this.checkId)
+    console.log("checkId = " + this.checkId)
+  }
+
+  openAccount(id: number) {
+    this.router.navigate(['acc'])
+    this.checkId = id;
   }
 }

@@ -1,20 +1,26 @@
+<div class="header-wrapper">
+    <div class="header">
+        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png" (click)="returnToPosts()">
+        <button type="submit" (click)="authService.logout()">Log Out</button>
+    </div>
+</div>
 <div class="container">
     <div class="post">
-        <div class="post-photo">
+        <div class="post-photo" (dblclick)="like()">
             <div class="user-name">
-                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
+                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].user.userPhoto}}'></div>
                 <div class="text-block">
-                    <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>
+                    <h3>{{this.postService.posts[this.Id - 1].user.userName}}</h3>
                     <h6>{{this.postService.posts[this.Id - 1].userPlace}}</h6>
                 </div>
             </div>
             <div class="img-wrapper"><img src="{{this.postService.posts[this.Id - 1].imagePath}}"></div>
         </div>
         <div class="post-comms">
-            <div class="user-block">
-                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].userPhoto}}'></div>
+            <div class="user-block" (click)="openAccount(this.Id)">
+                <div class="user-photo"><img src='{{this.postService.posts[this.Id - 1].user.userPhoto}}'></div>
                 <div class="text-block">
-                    <h3>{{this.postService.posts[this.Id - 1].userName}}</h3>
+                    <h3>{{this.postService.posts[this.Id - 1].user.userName}}</h3>
                     <h6>{{this.postService.posts[this.Id - 1].userPlace}}</h6>
                 </div>
             </div>
@@ -40,8 +46,12 @@
             <div class="buttons">
                 <button (click)="editPost(this.postService.posts[this.Id - 1].id)">Edit</button>
                 <button (click)="deletePost()">Delete</button>
-                <button (click)="returnToPosts()">Back</button>
+                <button (click)="returnToPosts()">Posts</button>
+                <button (click)="openAccount(Id)">Account</button>
             </div>
         </div>
     </div>
 </div>
+<footer>
+    <h3>© EgorKrez.github.io 2020 | Developed by ME</h3>
+</footer>

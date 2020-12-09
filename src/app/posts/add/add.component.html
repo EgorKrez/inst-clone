@@ -1,8 +1,42 @@
-<div class="container">
-<input type="text" placeholder="userName" [(ngModel)]="userName">
-<input type="text" placeholder="userPlace" [(ngModel)]="userPlace">
-<input type="text" placeholder="userPhoto" [(ngModel)]="userPhoto">
-<input type="text" placeholder="imagePath" [(ngModel)]="img">
-<button (click)="generatePost()">Add post</button>
-<button (click)="returnToPosts()">Posts</button>
+<div class="header-wrapper">
+    <div class="header">
+        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png"
+            (click)="returnToPosts()">
+        <button type="submit" (click)="authService.logout()">Log Out</button>
+    </div>
 </div>
+<div class="container">
+    <div class="field">
+        <form class="ng-pristine ng-untouched ng-valid" novalidate #myForm="ngForm" [formGroup]="addForm" (ngSubmit)="generatePost()">
+            <a>Username</a>
+            <div class="form-group">
+                <input class="form-control" formControlName="userName" type="text" placeholder="Username" [(ngModel)]="userName"
+                required minlength="2" required
+                >
+            </div>
+            <a>Place</a>
+            <div class="form-group">
+                <input class="form-control" formControlName="userPlace" type="text" placeholder="Place" [(ngModel)]="userPlace" 
+                required minlength="5" required
+                >
+            </div>
+            <a>User Photo</a>
+            <div class="form-group">
+                <input class="form-control" formControlName="userPhoto" type="text" placeholder="User Photo" [(ngModel)]="userPhoto"
+                required minlength="20" required
+                >
+            </div>
+            <a>Photo</a>
+            <div class="form-group">
+                <input class="form-control" formControlName="img" type="text" placeholder="Photo" [(ngModel)]="img"
+                required minlength="20" required
+                >
+            </div>
+            <div class="input-block"><button type="submit" [disabled]="!myForm.valid" click="submit(myForm)">Add post</button></div>
+         </form> 
+         <div class="input-block"><button (click)="returnToPosts()">Posts</button></div>
+    </div>
+</div>
+<footer>
+    <h3>© EgorKrez.github.io 2020 | Developed by ME</h3>
+</footer>

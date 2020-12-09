@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from 'src/app/auth.service'
-import {Post} from 'src/app/shared/post.service'
-import {PostService} from 'src/app/shared/post.service'
+import { AuthService } from 'src/app/auth.service'
+import { Post } from 'src/app/shared/post.service'
+import { PostService } from 'src/app/shared/post.service'
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-post',
@@ -9,12 +11,13 @@ import {PostService} from 'src/app/shared/post.service'
   styleUrls: ['./edit-post.component.scss']
 })
 export class EditPostComponent implements OnInit {
-  userName: string = '';
+
+  public addForm: FormGroup;
+
   userPlace: string = '';
-  userPhoto: string = '';
   img: string = '';
 
-  posts: Post [] = this.postService.posts;
+  posts: Post[] = this.postService.posts;
 
   constructor(public authService: AuthService, public postService: PostService) { }
 
@@ -22,13 +25,12 @@ export class EditPostComponent implements OnInit {
   public newPost: Post = this.postService.posts[this.authService.checkId - 1]
 
   ngOnInit(): void {
+    this.initForm()
   }
 
   editPost() {
-    if(this.userName != '') this.newPost.userName = this.userName
-    if(this.userPlace != '') this.newPost.userPlace = this.userPlace
-    if(this.userPhoto != '') this.newPost.userPhoto = this.userPhoto
-    if(this.img != '') this.newPost.imagePath = this.img
+    if (this.userPlace != '') this.newPost.userPlace = this.userPlace
+    if (this.img != '') this.newPost.imagePath = this.img
     this.posts[this.authService.checkId - 1] = this.newPost;
   }
 
@@ -39,4 +41,15 @@ export class EditPostComponent implements OnInit {
   returnToPosts() {
     this.authService.returnToPosts();
   }
+
+  public initForm() {
+    this.addForm = new FormGroup({
+      userPlace: new FormControl(this.newPost.userPlace),
+      img: new FormControl(this.newPost.imagePath),
+    })
+  }
+
+  submit(form: NgForm){
+    console.log(form);
+}
 }

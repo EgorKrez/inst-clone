@@ -1,13 +1,13 @@
 <div class="post-wrapper">
     <div class="post">
         <div class="user">
-            <div class="user-photo" (click)="openPost(id)"><img src='{{userPhoto}}'></div>
+            <div class="user-photo" (click)="openAccount(id)"><img src='{{userPhoto}}'></div>
             <div class="text-block">
                 <h3>{{userName}}</h3>
                 <h6>{{userPlace}}</h6>
             </div>
         </div>
-        <div class="img-wrapper"><img src='{{imagePath}}' class="img-post"></div>
+        <div class="img-wrapper" (click)="openPost(id)"><img src='{{imagePath}}' class="img-post"></div>
         <div class="icons-wrapper">
             <button *ngIf='isLiked' (click)="like()">
                 💗{{likeCount + 1}}

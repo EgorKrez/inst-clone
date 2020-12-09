@@ -1,16 +1,17 @@
 <header>
     <div class="header-content">
-    <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png">
-    <input type="text" placeholder="Search">
-    <button type="submit" (click)="authService.logout()">Log Out</button>    
-</div>
+        <img src="https://www.pngkey.com/png/full/717-7177939_designed-by-gage-the-designer.png">
+        <input type="text" placeholder="Search">
+        <button type="submit" (click)="authService.logout()">Log Out</button>
+    </div>
 </header>
+
 <div class="posts">
-    <div *ngFor="let item of posts">
+    <!-- <div *ngFor="let item of a | json">
             <app-post 
-            [userName]='item.userName'
+            [userName]='item.user.userName'
             [userPlace]='item.userPlace'
-            [userPhoto]= 'item.userPhoto'
+            [userPhoto]= 'item.user.userPhoto'
             [id]='item.id'
             [likeCount]='item.likeCount'
             [imagePath]='item.imagePath'
@@ -18,7 +19,16 @@
             [comments]="item.comments"
             >
             </app-post>
-        </div>
+        </div> -->
 </div>
+<h1>{{a}}</h1>
+<div *ngFor="let item of a">
+    <h1>hui</h1>
+</div>
+
+<div class="button-wrapper"><button (click)="pagination()">Show more posts</button></div>
 <div class="button-wrapper"><button (click)="addComment()">Add new post</button></div>
+<footer>
+    <h3>© EgorKrez.github.io 2020 | Developed by ME</h3>
+</footer>
 

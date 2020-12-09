@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { from } from 'rxjs';
-import { Comment } from 'src/app/shared/post.service';
-import {LoginComponent} from 'src/app/login/login.component'
-import {AuthService} from 'src/app/auth.service'
+import { Comment, Post } from 'src/app/shared/post.service';
+import { LoginComponent } from 'src/app/login/login.component'
+import { AuthService } from 'src/app/auth.service'
 
 @Component({
     selector: 'app-post',
@@ -22,17 +22,17 @@ export class PostComponent {
     @Input() comments: Comment;
 
     constructor(public authService: AuthService) { }
-    
+
     public getLogin() {
         console.log(this.authService.logIn);
         return this.authService.logIn;
-    } 
+    }
 
 
     public showComments: boolean;
     public title: string = '';
     like(): void {
-        this.isLiked =  !this.isLiked;
+        this.isLiked = !this.isLiked;
     }
 
     comment(id: number): void {
@@ -40,7 +40,7 @@ export class PostComponent {
         this.showComments = !this.showComments;
     }
 
-    addComment(id: number): void{
+    addComment(id: number): void {
         const comment: string = this.title;
         this.comments.text.push(comment);
         this.title = '';
@@ -49,5 +49,9 @@ export class PostComponent {
     openPost(id: number) {
         console.log(id)
         this.authService.openPost(id)
+    }
+
+    openAccount(id: number) {
+        this.authService.openAccount(id)
     }
 }
